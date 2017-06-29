@@ -14,9 +14,6 @@ The goals / steps of this project are the following:
 * Reflect on your work in a written report
 
 
-[//]: # (Image References)
-
-[image1]: ./test_images_output/anim/flow.gif "Grayscale"
 
 ---
 
@@ -25,22 +22,38 @@ The goals / steps of this project are the following:
 ### 1. The pipeline 
 
 Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I ....
+
+It consists of the following steps:
+
+#### Step 0 : Read the image
+Reading the raw image that has been feed to the system. The pixel values are converted into an array shaped based on the dimensions of the image and the color channel
+
+#### Step 1 : Convert to Grayscale
+Using Open CV library we convert the image to a grayscale image. We do this since we are only interested in detecting the lines of the lane and any other extra information would be just a distraction for the algorithm
+
+#### Step 2 : Canny edge detection
+We run the gray image through a Canny edge detection with a tuned low and high threshold parameters. The output from this step is an image that contains a lot of edges
+
+#### Step 3 : Gaussian blur
+Not all edges are interesting for us. Edge detection could produce a lot of noise and we want to reduce them. Running through a Gaussian function blurs the image and only prominent edges stay alive
+
+#### Step 4 : Trimming
+
+
+
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
 If you'd like to include images to show how the pipeline works, here is how to include an image:
 
-[Pipeline]: ./test_images_output/anim/pipeline.png
 
-[Flow]: ./test_images_output/anim/flow.gif
+[Flow]: ./test_images_output/anim/pipeline.png
 
-![alt text][image1]
 
 
 ### 2. Potential Shortcomings
 The pipeline fails when the terrain is even a little unpredictable. The algorithm completely relies on only the 2D image that lacks the steroscopic vision capability of a human eye. The algorithm assumes the camera mount and its angle of detection. Any change in the perspective would distort the detection. Another major shortcoming is the pipeline parameters has been trained with only the dataset that is available here.
-# Things that could cause the pipline to fail
+#### Things that could cause the pipline to fail
 - Rain/Snow
 - Changing brightness/Shadows
 - Night time
