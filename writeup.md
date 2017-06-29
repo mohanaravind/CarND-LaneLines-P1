@@ -11,16 +11,16 @@
 
 The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
+* Reflect on the findings
 
 [//]: # (Image References)
 
-[pipeline]: ./test_images_output/anim/pipeline.png "Pipeline"
+[flow]: ./test_images_output/anim/flow.gif "Flow"
 
 ---
 
 ### Reflection
-
+<img  src="./test_images_output/anim/pipeline.png" align="right"/>
 ### 1. The pipeline 
 
 Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
@@ -49,14 +49,13 @@ Using Hough transformation we detect the lines from edges within the region of i
 ##### Step 6 : Superimpose result
 Using cv2's addWeighted function we superimpose the Hough lines onto the original image. This lets us visualize the lanes
 
+<img  src="./test_images_output/anim/flow.gif"/>
+
 #### Modification to draw_lines() function
 The original draw_lines() function simply loops through all the detect lines from Hough transform and draw them on the image. This could look noisy since it doesn't elliminate the lines that are really not lanes.
 Simply by computing the slope of each line m = (y2-y1)/(x2-x1) helps us detect if the line is representative of the left lane or right lane. 
 We simply ignore the lines that have a zero slope or if its value falls in a range that is unlikely representation of the lane.
 Using the extreme 'Y' axis points we find out the corresponding x-coordinate at those extreme points. We use these points to draw the left and right lane. Once we draw the lanes we break the loop. This method potentially reduces the number of times the loop has to execute. We break the main loop when both the lines are drawn.
-
-![Pipeline Figure][pipeline]
-
 
 
 ### 2. Potential Shortcomings
