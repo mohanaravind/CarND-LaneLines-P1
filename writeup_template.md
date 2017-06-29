@@ -39,18 +39,18 @@ If you'd like to include images to show how the pipeline works, here is how to i
 
 
 ### 2. Potential Shortcomings
-- Rain/Snow/
+The pipeline fails when the terrain is even a little unpredictable. The algorithm completely relies on only the 2D image that lacks the steroscopic vision capability of a human eye. The algorithm assumes the camera mount and its angle of detection. Any change in the perspective would distort the detection. Another major shortcoming is the pipeline parameters has been trained with only the dataset that is available here.
+# Things that could cause the pipline to fail
+- Rain/Snow
 - Changing brightness/Shadows
 - Night time
 - Physical damage that could offset the camera's position
 - Inclination/Declination
 - Switching lanes
-- Overfit to the dataset that has been used here
-
-One potential shortcoming would be what would happen when ...
-
-Another shortcoming could be ...
-
+- Bumpy road
+- Poorly marked lanes
+- Lanes that got painted back
+- Reflection of sunlight on the lane marking
 
 ### 3. Possible improvements
 
