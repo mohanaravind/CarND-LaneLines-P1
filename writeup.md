@@ -57,6 +57,11 @@ Simply by computing the slope of each line m = (y2-y1)/(x2-x1) helps us detect i
 We simply ignore the lines that have a zero slope or if its value falls in a range that is unlikely representation of the lane.
 Using the extreme 'Y' axis points we find out the corresponding x-coordinate at those extreme points. We use these points to draw the left and right lane. Once we draw the lanes we break the loop. This method potentially reduces the number of times the loop has to execute. We break the main loop when both the lines are drawn.
 
+##### Before
+<img src="./test_images_output/before/solidWhiteCurve.jpg"/>
+
+##### After
+<img src="./test_images_output/solidWhiteCurve.jpg"/>
 
 ### 2. Potential Shortcomings
 The pipeline fails when the terrain is even a little unpredictable. The algorithm completely relies on only the 2D image that lacks the steroscopic vision capability of a human eye. The algorithm assumes the camera mount and its angle of detection. Any change in the perspective would distort the detection. Another major shortcoming is the pipeline parameters has been trained with only the dataset that is available here.
