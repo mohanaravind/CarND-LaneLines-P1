@@ -16,4 +16,10 @@ Increasing these parameters will create smoother and longer lines
 
 "threshold" defined the minimum number of intersections in a given grid cell that are required to choose a line.
 Increasing this parameter, the filter will choose longer lines and ignore short lines.
+
+## References
 http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_imgproc/py_houghlines/py_houghlines.html
+http://airccj.org/CSCP/vol5/csit53211.pdf
+https://www.youtube.com/watch?v=hnXkCiM2RSg&feature=youtu.be
+https://stackoverflow.com/questions/36598897/python-and-opencv-improving-my-lane-detection-algorithm
+https://www.python.org/dev/peps/pep-0008/
